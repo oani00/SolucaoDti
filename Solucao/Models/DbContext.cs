@@ -7,9 +7,18 @@ namespace Solucao.Models
     {
         private readonly string _connectionString;
 
-        public DbContext(string connectionString)
+        public DbContext()
         {
-            _connectionString = connectionString;
+            _connectionString = $@"  Data Source=OANI-PC;
+                                    Initial Catalog=Solucao;
+                                    User ID=sa;
+                                    Password={File.ReadAllText(@"C:\backupsON\password.txt")};
+                                    Connect Timeout=30;
+                                    Encrypt=False;
+                                    TrustServerCertificate=False;
+                                    ApplicationIntent=ReadWrite;
+                                    MultiSubnetFailover=False";
+            //Le a senha de um simples arquivo de texto fora do projeto que contém apenas a senha.
         }
 
         public DataTable ExecuteQuery(string sqlQuery)
