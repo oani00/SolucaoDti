@@ -1,29 +1,35 @@
 ﻿@page
 @model DetailsModel
 @{
-    ViewData["Title"] = "Product Details";
+    ViewData["Title"] = "Dados do produto";
 }
 
-<h2>Product Details</h2>
+<h2>Dados do produto</h2>
 
-<div>
-    <label>Nome:</label>
-    <span>@Model.Product.Name</span>
-</div>
-<div>
-    <label>ID:</label>
-    <span>@Model.Product.Id</span>
-</div>
+<form method="post" asp-page-handler="CreateOrUpdate">
+    
 
-<div>
-    <label>Descrição:</label>
-    <span>@Model.Product.Descricao</span>
-</div>
+    <div>
+        <label>Nome:..........</label>
+        <input type="text" asp-for="Product.Name" name="name" />
+    </div>
+    <div>
+        <label>ID:...................</label>
+        <input type="text" asp-for="Product.Id" name="id" />
+    </div>
+    <div>
+        <label>Descrição:....</label>
+        <input type="text" asp-for="Product.Descricao" name="descricao" />
+    </div>
+    <div>
+        <label>Quantidade:</label>
+        <input type="number" asp-for="Product.Quantidade" name="quantity" />
+    </div>
 
-<div>
-    <label>Quantidade:</label>
-    <span>@Model.Product.Id</span>
-</div>
+    <input type="submit" value="Cadastrar/Atualizar" />
+</form>
 
-
-
+<form method="post" asp-page-handler="Delete">
+    <input type="hidden" asp-for="Product.Id" name="id" />
+    <input type="submit" value="Delete" />
+</form>

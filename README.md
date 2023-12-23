@@ -2,6 +2,9 @@
 
 Solucao teste tecnico DTI
 
+Demonstração:
+![DEMO](gifDemonstracao.gif)
+
 Criação do banco:
 
 -- Criação da tabela Produto
