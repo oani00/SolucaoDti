@@ -2,6 +2,9 @@
 
 Solucao teste tecnico DTI
 
+A documentação exigida pode ser encontrada em
+[DOCS](Documentacao.pdf)
+
 Demonstração:
 ![DEMO](gifDemonstracao.gif)
 
