@@ -8,6 +8,11 @@ A documentação exigida pode ser encontrada em
 Demonstração:
 ![DEMO](gifDemonstracao.gif)
 
+# Stack
+
+-Asp Net Core com .net6 para o front e back
+-SQL Server para o banco.
+
 Criação do banco:
 
 -- Criação da tabela Produto
