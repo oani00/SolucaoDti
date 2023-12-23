@@ -8,42 +8,42 @@ Criação do banco:
 CREATE TABLE Produto (
 Id INT PRIMARY KEY,
 Nome NVARCHAR(255),
+Descrição NVARCHAR(255),
 ValorUnitario DECIMAL(10, 2)
 );
 
--- Criação da tabela Produtos
-CREATE TABLE Produtos (
-Id INT,
+-- Criação da tabela Estoque
+CREATE TABLE Estoque (
+Id INT IDENTITY(1, 1) PRIMARY KEY,
 ProdutoId INT,
 Quantidade INT,
-PRIMARY KEY (Id, ProdutoId),
 FOREIGN KEY (ProdutoId) REFERENCES Produto(Id)
 );
 
-Populando a base:
+Populando a base com dados exemplo:
 
 -- Criação de 10 produtos
-INSERT INTO Produto (Id, Nome, ValorUnitario) VALUES
-(1, 'Livro', 29.90),
-(2, 'Caneta', 1.50),
-(3, 'Caderno', 15.00),
-(4, 'Mochila', 49.99),
-(5, 'Fone de ouvido', 79.90),
-(6, 'Mouse', 39.90),
-(7, 'Teclado', 59.90),
-(8, 'Monitor', 299.00),
-(9, 'Impressora', 199.00),
-(10, 'Câmera', 399.00);
+INSERT INTO Produto (Id, Nome, Descrição, ValorUnitario) VALUES
+(1, 'Livro', 'Um livro sobre programação em SQL', 29.90),
+(2, 'Caneta', 'Uma caneta azul com tampa', 1.50),
+(3, 'Caderno', 'Um caderno de 100 folhas pautadas', 15.00),
+(4, 'Mochila', 'Uma mochila preta com zíper', 49.99),
+(5, 'Fone de ouvido', 'Um fone de ouvido sem fio com Bluetooth', 79.90),
+(6, 'Mouse', 'Um mouse óptico com USB', 39.90),
+(7, 'Teclado', 'Um teclado sem fio com pilhas', 59.90),
+(8, 'Monitor', 'Um monitor LED de 24 polegadas', 299.00),
+(9, 'Impressora', 'Uma impressora multifuncional com Wi-Fi', 199.00),
+(10, 'Câmera', 'Uma câmera digital com zoom óptico', 399.00);
 
 -- Inserção de quantidades dos produtos
-INSERT INTO Produtos (Id, ProdutoId, Quantidade) VALUES
-(1, 1, 10),
-(1, 2, 20),
-(1, 3, 15),
-(1, 4, 5),
-(1, 5, 8),
-(1, 6, 12),
-(1, 7, 10),
-(1, 8, 3),
-(1, 9, 4),
-(1, 10, 2);
+INSERT INTO Estoque (ProdutoId, Quantidade) VALUES
+(1, 10),
+(2, 20),
+(3, 15),
+(4, 5),
+(5, 8),
+(6, 12),
+(7, 10),
+(8, 3),
+(9, 4),
+(10, 2);
