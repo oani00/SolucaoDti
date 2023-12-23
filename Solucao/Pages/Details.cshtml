@@ -1,0 +1,35 @@
+﻿@page
+@model DetailsModel
+@{
+    ViewData["Title"] = "Dados do produto";
+}
+
+<h2>Dados do produto</h2>
+
+<form method="post" asp-page-handler="CreateOrUpdate">
+    
+
+    <div>
+        <label>Nome:..........</label>
+        <input type="text" asp-for="Product.Name" name="name" />
+    </div>
+    <div>
+        <label>ID:...................</label>
+        <input type="text" asp-for="Product.Id" name="id" />
+    </div>
+    <div>
+        <label>Descrição:....</label>
+        <input type="text" asp-for="Product.Descricao" name="descricao" />
+    </div>
+    <div>
+        <label>Quantidade:</label>
+        <input type="number" asp-for="Product.Quantidade" name="quantity" />
+    </div>
+
+    <input type="submit" value="Cadastrar/Atualizar" />
+</form>
+
+<form method="post" asp-page-handler="Delete">
+    <input type="hidden" asp-for="Product.Id" name="id" />
+    <input type="submit" value="Delete" />
+</form>

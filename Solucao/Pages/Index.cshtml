@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Produtos em estoque";
+}
+
+<h2>Produtos em estoque</h2>
+
+<form method="get" asp-page="Details">
+    <input type="submit" value="Cadastrar Produto" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 200px;"></th>
+            <th>ID</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>
+                    <form method="get" asp-page="Details">
+                        <input type="hidden" asp-for="@product.Id" name="id" />
+                        <input type="submit" value="Detalhes do produto" />
+                    </form>
+                </td>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
